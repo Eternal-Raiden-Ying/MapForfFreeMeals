@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>2023级1班蹭饭图</title>
+                <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/echarts.min.js"></script>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/maps/china.js"></script>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/maps/jiangsu.js"></script>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/themes/vintage.js"></script>
+
+    
+</head>
+<body >
+    <style>.box {  } </style>
+    <div class="box">
+                <div id="全国" class="chart-container" style="width:1200px; height:900px; "></div>
+    <script>
+        var chart_全国 = echarts.init(
+            document.getElementById('全国'), 'vintage', {renderer: 'canvas'});
+            
+        function choose_data(name){
+            let lab = ''
+            if(name=='江苏省'){
+                lab += '<p>详见下图</p>';
+                return lab;
+            }else if(name=='安徽省'){
+                lab += '<p>庞灿:合肥市  合肥工业大学</p>';
+                return lab;
+            }else if(name=='上海市'){
+                lab += '<p>袁梦凡:华东师范大学</p>';
+                lab += '<p>何璐:华东政法大学</p>';
+                lab += '<p>杨璨尔:华东政法大学</p>';
+                return lab;
+            }else if(name=='山东省'){
+                lab += '<p>张萱:济南市  山东大学</p>';
+                lab += '<p>朱振羽:济南市  山东大学</p>';
+                return lab;
+            }else if(name=='天津市'){
+                lab += '<p>张嘉伟:天津大学</p>';
+                return lab;
+            }else if(name=='陕西省'){
+                lab += '<p>尹力:西安市  西北工业大学</p>';
+                return lab;
+            }else if(name=='湖北省'){
+                lab += '<p>郑昊辰:武汉市  华中科技大学</p>';
+                return lab;
+            }else if(name=='湖南省'){
+                lab += '<p>张煜琪:长沙市  湖南大学</p>';
+                return lab;
+            }else if(name=='北京市'){
+                lab += '<p>王一凡:中国人民公安大学</p>';
+                lab += '<p>纪弘璐:中国科学院大学</p>';
+                lab += '<p>周睿妍:中国科学院大学</p>';
+                lab += '<p>薛亦涵:中国政法大学</p>';
+                lab += '<p>李恒怡:中央财经大学</p>';
+                return lab;
+            }
+        }
+        
+        var option_全国 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "map",
+            "label": {
+                "show": false,
+                "margin": 8,
+                "fontSize": 16,
+                "fontFamily": "\u6977\u4f53"
+            },
+            "map": "china",
+            "data": [
+                {
+                    "name": "\u6c5f\u82cf\u7701",
+                    "value": 38
+                },
+                {
+                    "name": "\u5317\u4eac\u5e02",
+                    "value": 5
+                },
+                {
+                    "name": "\u5c71\u4e1c\u7701",
+                    "value": 2
+                },
+                {
+                    "name": "\u4e0a\u6d77\u5e02",
+                    "value": 3
+                },
+                {
+                    "name": "\u5b89\u5fbd\u7701",
+                    "value": 1
+                },
+                {
+                    "name": "\u9655\u897f\u7701",
+                    "value": 1
+                },
+                {
+                    "name": "\u6e56\u5357\u7701",
+                    "value": 1
+                },
+                {
+                    "name": "\u6e56\u5317\u7701",
+                    "value": 1
+                },
+                {
+                    "name": "\u5929\u6d25\u5e02",
+                    "value": 1
+                }
+            ],
+            "roam": true,
+            "aspectScale": 0.75,
+            "scaleLimit": {
+                "min": 0.8,
+                "max": 5
+            },
+            "nameProperty": "name",
+            "selectedMode": false,
+            "zoom": 1,
+            "nameMap": {
+                "\u9999\u6e2f\u7279\u522b\u884c\u653f\u533a": "\u9999\u6e2f",
+                "\u6fb3\u95e8\u7279\u522b\u884c\u653f\u533a": "\u6fb3\u95e8"
+            },
+            "zlevel": 0,
+            "z": 2,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "mapValueCalculation": "sum",
+            "showLegendSymbol": false,
+            "tooltip": {
+                "show": true,
+                "trigger": "item",
+                "triggerOn": "mousemove|click",
+                "axisPointer": {
+                    "type": "line"
+                },
+                "showContent": true,
+                "alwaysShowContent": false,
+                "showDelay": 0,
+                "hideDelay": 100,
+                "enterable": false,
+                "confine": false,
+                "appendToBody": false,
+                "transitionDuration": 0.4,
+                "formatter":                     function(param){                        if(!param.data){                            return;                        }                        let temp = '';                        temp += '<div style=\"width:auto;height:auto; background: ';                        temp += '#FDF5E6';                        temp += ';\">';                        temp += '<div style=\"font-size:18px;color:#000000;';                        temp += 'margin-bottom:2px;display:flex;align-items:center;line-height:0.2;\">';                        temp += '<span style=\"flex:1;text-align:left;\">';                        temp += '<p>'+param.data.name+':</p>';                        temp += choose_data(param.data.name);                        temp += '</span>';                        return temp;                    }                ,
+                "textStyle": {
+                    "fontFamily": "\u6977\u4f53",
+                    "fontSize": 18
+                },
+                "backgroundColor": "#FDF5E6",
+                "borderWidth": 0,
+                "padding": 5,
+                "order": "seriesAsc"
+            },
+            "emphasis": {}
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                ""
+            ],
+            "selected": {},
+            "show": false,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderWidth": 1,
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "title": [
+        {
+            "show": true,
+            "text": "\u805a\u5982\u4e00\u56e2\u706b\n    \u6563\u82e5\u6ee1\u5929\u661f",
+            "target": "blank",
+            "subtext": "\u4e1c\u59162023\u7ea71\u73ed",
+            "subtarget": "blank",
+            "left": "10px",
+            "top": "20px",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "left",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false,
+            "textStyle": {
+                "color": "#CC3299",
+                "fontStyle": "italic",
+                "fontFamily": "\u534e\u6587\u65b0\u9b4f",
+                "fontSize": 54
+            },
+            "subtextStyle": {
+                "color": "#ADEAEA",
+                "fontStyle": "oblique",
+                "fontFamily": "\u6977\u4f53",
+                "fontSize": 27
+            }
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": 0,
+        "max": 38,
+        "inRange": {
+            "color": [
+                "#C0D9D9",
+                "#38B0DE"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "hoverLink": true,
+        "orient": "vertical",
+        "padding": 5,
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    }
+};
+        chart_全国.setOption(option_全国);
+    </script>
+<br/>                <div id="江苏" class="chart-container" style="width:1200px; height:900px; "></div>
+    <script>
+        var chart_江苏 = echarts.init(
+            document.getElementById('江苏'), 'vintage', {renderer: 'canvas'});
+            
+        function choose_data2(name){
+            let lab = '';
+            if(name=='南京市'){
+                lab += '<table><tr>';
+                lab += '<td>孔菀琳:江苏警官学院</td><td>许嫣然:江苏警官学院</td>';
+                lab += '</tr><tr>';
+                lab += '<td>张晓雨:江苏警官学院</td><td>张亦弛:江苏警官学院</td>';
+                lab += '</tr><tr>';
+                lab += '<td>朱语:江苏警官学院</td><td>宫婉丽:南京森林警察学院</td>';
+                lab += '</tr><tr>';
+                lab += '<td>高贝贝:南京大学</td><td>陈洪量:南京大学</td>';
+                lab += '</tr><tr>';
+                lab += '<td>戴子宇:南京大学</td><td>杨佳润:南京大学</td>';
+                lab += '</tr><tr>';
+                lab += '<td>曹思伊:南京大学</td><td>纪宇轩:南京大学</td>';
+                lab += '</tr><tr>';
+                lab += '<td>陆威宇:东南大学</td><td>王旭:东南大学</td>';
+                lab += '</tr><tr>';
+                lab += '<td>葛玥灵:东南大学</td><td>唐志超:东南大学</td>';
+                lab += '</tr><tr>';
+                lab += '<td>叶晓柯:南京航空航天大学</td><td>刘礼阳:南京理工大学</td>';
+                lab += '</tr><tr>';
+                lab += '<td>郭琦:河海大学</td><td>王润乔:河海大学</td>';
+                lab += '</tr><tr>';
+                lab += '<td>吴晓牧:河海大学</td><td>郑邴文:河海大学</td>';
+                lab += '</tr><tr>';
+                lab += '<td>陶紫妍:南京师范大学</td><td>吴芷静:南京师范大学</td>';
+                lab += '</tr><tr>';
+                lab += '<td>张筱涵:南京信息工程大学</td><td>陈廿翔:南京医科大学</td>';
+                lab += '</tr><tr>';
+                lab += '<td>王佳颖:南京医科大学</td><td>薛煜霏:南京医科大学</td>';
+                lab += '</tr><tr>';
+                lab += '<td>杨丰悦:南京医科大学</td><td>杨子菲:南京医科大学</td>';
+                lab += '</tr><tr>';
+                lab += '<td>郭金玲:南京邮电大学</td><td>李婧婷:南京邮电大学</td>';
+                lab += '</tr><tr>';
+                lab += '<td>潘艺铭:南京邮电大学</td><td>徐涵:南京邮电大学</td>';
+                lab += '</tr><tr>';
+                lab += '<td>苏一函:南京理工大学</td>';
+                lab += '</tr></table>';
+                return lab;
+            }else if(name=='南通市'){
+                lab += '<p>刘以恒:南通大学</p>';
+                return lab;
+            }else if(name=='苏州市'){
+                lab += '<p>杨书悦:苏州大学</p>';
+                return lab;
+            }else if(name=='常州市'){
+                lab += '<p>柴梓涵:西交利物浦大学</p>';
+                return lab;
+            }
+        }
+        
+        var option_江苏 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "map",
+            "label": {
+                "show": false,
+                "margin": 8,
+                "fontSize": 16,
+                "fontFamily": "\u6977\u4f53"
+            },
+            "map": "\u6c5f\u82cf",
+            "data": [
+                {
+                    "name": "\u5357\u4eac\u5e02",
+                    "value": 35
+                },
+                {
+                    "name": "\u82cf\u5dde\u5e02",
+                    "value": 1
+                },
+                {
+                    "name": "\u5357\u901a\u5e02",
+                    "value": 1
+                },
+                {
+                    "name": "\u5e38\u5dde\u5e02",
+                    "value": 1
+                }
+            ],
+            "roam": true,
+            "aspectScale": 0.75,
+            "scaleLimit": {
+                "min": 0.8,
+                "max": 5
+            },
+            "nameProperty": "name",
+            "selectedMode": false,
+            "zoom": 1,
+            "zlevel": 0,
+            "z": 2,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "mapValueCalculation": "sum",
+            "showLegendSymbol": false,
+            "tooltip": {
+                "show": true,
+                "trigger": "item",
+                "triggerOn": "mousemove|click",
+                "axisPointer": {
+                    "type": "line"
+                },
+                "showContent": true,
+                "alwaysShowContent": false,
+                "showDelay": 0,
+                "hideDelay": 100,
+                "enterable": false,
+                "confine": false,
+                "appendToBody": false,
+                "transitionDuration": 0.4,
+                "formatter":                     function(param){                        if(!param.data){                            return;                        }                        let temp = '';                        temp += '<div style=\"width:auto;height:auto; background: ';                        temp += '#FDF5E6';                        temp += ';\">';                        temp += '<div style=\"font-size:18px;color:#000000;';                        temp += 'margin-bottom:2px;display:flex;align-items:center;line-height:1;\">';                        temp += '<span style=\"flex:1;text-align:left;\">';                        temp += '<p>'+param.data.name+':</p>';                        temp += choose_data2(param.data.name);                        temp += '</span>';                        return temp;                    }                ,
+                "textStyle": {
+                    "fontFamily": "\u6977\u4f53",
+                    "fontSize": 18
+                },
+                "backgroundColor": "#FDF5E6",
+                "borderWidth": 0,
+                "padding": 5,
+                "order": "seriesAsc"
+            },
+            "emphasis": {}
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                ""
+            ],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderWidth": 1,
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "title": [
+        {
+            "show": true,
+            "target": "blank",
+            "subtarget": "blank",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": 0,
+        "max": 35,
+        "inRange": {
+            "color": [
+                "#C0D9D9",
+                "#38B0DE"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "hoverLink": true,
+        "orient": "vertical",
+        "padding": 5,
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    }
+};
+        chart_江苏.setOption(option_江苏);
+    </script>
+<br/>    </div>
+    <script>
+    </script>
+</body>
+</html>
